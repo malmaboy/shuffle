@@ -34,6 +34,9 @@ def buttom(screen, x, y, w, h, ic, ac, action=None):
             elif action == "exit":
                 pygame.quit()
                 quit()
+            elif action == "menu":
+                myy.visible = True
+        
     else:
         pygame.draw.rect(screen, ic, (x, y, w, h))
 
@@ -54,7 +57,7 @@ def menu(screen):
 def figuras(screen):
     
     #desenha as figuras
-
+    buttom(screen, 100, 550, 100, 50, yellow, red,"menu")
     buttom(screen, 390, 80, 100, 150, green, white)
     buttom(screen, 550, 80, 100, 150, green, white)
     buttom(screen, 710, 80, 100, 150, green, white)
