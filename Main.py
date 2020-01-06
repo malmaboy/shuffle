@@ -1,5 +1,6 @@
 import pygame
 import pygame.freetype
+import random
 
 def menu(screen):
     # Desenha o menu  (cores),(X,Y, Largura e Altura)
