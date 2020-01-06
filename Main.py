@@ -103,7 +103,7 @@ def main():
     
 
     #Pôe a imagem no menu
-
+    image = pygame.image.load("shuffle.png")
     
    
 
@@ -115,10 +115,10 @@ def main():
                 exit()
             pygame.display.update()
         screen.fill((0,0,20))  
-
          # função desenha as figuras e texto
         # menusVisible = False
         if(myy.visible == True):
+            screen.blit(image,(200, 0))
             menu(screen)
         else:
             figuras(screen)
