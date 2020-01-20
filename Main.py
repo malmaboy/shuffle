@@ -17,6 +17,7 @@ CYAN     = (0, 255, 255)
 BLACK    = (0, 0, 0)
 DARK_BLUE = (0, 0, 20)
 
+
 BGCOLOR = DARK_BLUE
 LIGHTBGCOLOR = GRAY
 BOXCOLOR = GREEN
@@ -151,7 +152,7 @@ def main():
     size_y = 700
     screen = pygame.display.set_mode((size_x, size_y))
     #WINDOW
-    screen.fill((0, 0, 20))
+    screen.fill(DARK_BLUE)
 
     #WINDOW NAME
     pygame.display.set_caption('Shuffle')

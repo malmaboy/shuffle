@@ -1,48 +1,48 @@
 import random, pygame, sys
 from pygame.locals import *
 
-FPS = 30 # frames per second, the general speed of the program
-WINDOWWIDTH = 1300 # size of window's width in pixels
-WINDOWHEIGHT = 700 # size of windows' height in pixels
+FPS = 55 # frames per second
+WINDOWWIDTH = 1300 # window's width in pixels
+WINDOWHEIGHT = 700 # windows' height in pixels
 REVEALSPEED = 8 # speed boxes' sliding reveals and covers
-BOXSIZE = 110 # size of box height & width in pixels
-GAPSIZE = 30 # size of gap between boxes in pixels
+BOXSIZE = 110 # box height & width in pixels
+GAPSIZE = 30 # gap between boxes in pixels
 BOARDWIDTH = 4 # number of columns of icons
 BOARDHEIGHT = 4 # number of rows of icons
-assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
+assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
 
  
 
-# R    G    B
+#COLORS
 
 GRAY     = (100, 100, 100)
-NAVYBLUE = ( 60,  60, 100)
+NAVYBLUE = (60, 60, 100)
 WHITE    = (255, 255, 255)
-RED      = (255,   0,   0)
-GREEN    = (  0, 255,   0)
-BLUE     = (  0,   0, 255)
-YELLOW   = (255, 255,   0)
-ORANGE   = (255, 128,   0)
-PURPLE   = (255,   0, 255)
-CYAN     = (  0, 255, 255)
-BLACK    = ( 0,0,0)
-DARK_BLUE = (0,0,20)
+RED      = (255, 0, 0)
+GREEN    = (0, 255, 0)
+BLUE     = (0, 0, 255)
+YELLOW   = (255, 255, 0)
+ORANGE   = (255, 128, 0)
+PURPLE   = (255, 0, 255)
+CYAN     = (0, 255, 255)
+BLACK    = (0, 0, 0)
+DARK_BLUE = (0 , 0, 20)
 
 BGCOLOR = DARK_BLUE
 LIGHTBGCOLOR = GRAY
 BOXCOLOR = GREEN
 HIGHLIGHTCOLOR = WHITE
 
-DONUT = 'donut'
+CIRCLE = 'circle'
 SQUARE = 'square'
 DIAMOND = 'diamond'
 
 
 ALLCOLORS = (RED, GREEN, BLUE, YELLOW, ORANGE, PURPLE, CYAN)
-ALLSHAPES = (DONUT, SQUARE, DIAMOND)
-assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for the number of shapes/colors defined."
+ALLSHAPES = (CIRCLE, SQUARE, DIAMOND)
+assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT
 
 
 
@@ -58,11 +58,10 @@ def main():
 
  
 
-    mousex = 0 # used to store x coordinate of mouse event
+    mousex = 0 
+    mousey = 0 
 
-    mousey = 0 # used to store y coordinate of mouse event
-
-    pygame.display.set_caption('Memory Game')
+    pygame.display.set_caption('Shuffle')
 
  
 
@@ -302,9 +301,8 @@ def getBoxAtPixel(x, y):
 
 def drawIcon(shape, color, boxx, boxy):
 
-    quarter = int(BOXSIZE * 0.25) # syntactic sugar
-
-    half =    int(BOXSIZE * 0.5)  # syntactic sugar
+    quarter = int(BOXSIZE * 0.25)
+    half =    int(BOXSIZE * 0.5) 
 
 
 
@@ -312,11 +310,9 @@ def drawIcon(shape, color, boxx, boxy):
 
     # Draw the shapes
 
-    if shape == DONUT:
+    if shape == CIRCLE:
 
         pygame.draw.circle(DISPLAYSURF, color, (left + half, top + half), half)
-
-        
 
     elif shape == SQUARE:
 
@@ -327,10 +323,6 @@ def drawIcon(shape, color, boxx, boxy):
         pygame.draw.polygon(DISPLAYSURF, color, ((left + half, top), (left + BOXSIZE - 1, top + half), (left + half, top + BOXSIZE - 1), (left, top + half)))
 
 
-
-
-
-
 def getShapeAndColor(board, boxx, boxy):
 
     # shape value for x, y spot is stored in board[x][y][0]
@@ -338,9 +330,6 @@ def getShapeAndColor(board, boxx, boxy):
     # color value for x, y spot is stored in board[x][y][1]
 
     return board[boxx][boxy][0], board[boxx][boxy][1]
-
-
-
 
 
 def drawBoxCovers(board, boxes, coverage):
@@ -370,8 +359,6 @@ def drawBoxCovers(board, boxes, coverage):
 
 
 
-
-
 def revealBoxesAnimation(board, boxesToReveal):
 
     # Do the "box reveal" animation.
@@ -381,9 +368,6 @@ def revealBoxesAnimation(board, boxesToReveal):
         drawBoxCovers(board, boxesToReveal, coverage)
 
 
-
-
-
 def coverBoxesAnimation(board, boxesToCover):
 
     # Do the "box cover" animation.
@@ -391,9 +375,6 @@ def coverBoxesAnimation(board, boxesToCover):
     for coverage in range(0, BOXSIZE + REVEALSPEED, REVEALSPEED):
 
       drawBoxCovers(board, boxesToCover, coverage)
-
-
-
 
 
 def drawBoard(board, revealed):
@@ -419,8 +400,6 @@ def drawBoard(board, revealed):
                 shape, color = getShapeAndColor(board, boxx, boxy)
 
                 drawIcon(shape, color, boxx, boxy)
-
-
 
 
 
