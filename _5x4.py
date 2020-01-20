@@ -1,21 +1,20 @@
 import random, pygame, sys
 from pygame.locals import *
 
-FPS = 30 # frames per second, the general speed of the program
-WINDOWWIDTH = 1300 # size of window's width in pixels
-WINDOWHEIGHT = 700 # size of windows' height in pixels
+FPS = 55 # frames per second
+WINDOWWIDTH = 1300 # window's width in pixels
+WINDOWHEIGHT = 700 # windows' height in pixels
 REVEALSPEED = 8 # speed boxes' sliding reveals and covers
-BOXSIZE = 100 # size of box height & width in pixels
-GAPSIZE = 30 # size of gap between boxes in pixels
+BOXSIZE = 130 # box height & width in pixels
+GAPSIZE = 30 # gap between boxes in pixels
 BOARDWIDTH = 5 # number of columns of icons
 BOARDHEIGHT = 4 # number of rows of icons
-assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
+assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
 
  
-
-# Colors
+#COLORS
 
 GRAY     = (100, 100, 100)
 NAVYBLUE = ( 60,  60, 100)
@@ -35,13 +34,13 @@ LIGHTBGCOLOR = GRAY
 BOXCOLOR = GREEN
 HIGHLIGHTCOLOR = WHITE
 
-DONUT = 'donut'
+CIRCLE = 'circle'
 SQUARE = 'square'
 DIAMOND = 'diamond'
 
 
 ALLCOLORS = (RED, GREEN, BLUE, YELLOW, ORANGE, PURPLE, CYAN)
-ALLSHAPES = (DONUT, SQUARE, DIAMOND)
+ALLSHAPES = (CIRCLE, SQUARE, DIAMOND)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for the number of shapes/colors defined."
 
 
@@ -58,10 +57,8 @@ def main():
 
  
 
-    mousex = 0 # used to store x coordinate of mouse event
-
-    mousey = 0 # used to store y coordinate of mouse event
-
+    mousex = 0 
+    mousey = 0 
     pygame.display.set_caption('Shuffle')
 
  
@@ -110,7 +107,6 @@ def main():
 
         if boxx != None and boxy != None:
 
-            # The mouse is currently over a box.
 
             if not revealedBoxes[boxx][boxy]:
 
@@ -312,7 +308,7 @@ def drawIcon(shape, color, boxx, boxy):
 
     # Draw the shapes
 
-    if shape == DONUT:
+    if shape == CIRCLE:
 
         pygame.draw.circle(DISPLAYSURF, color, (left + half, top + half), half)
 

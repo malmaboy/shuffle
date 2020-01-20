@@ -1,7 +1,7 @@
 import pygame, sys, random
 import pygame.freetype
 from pygame.locals import *
-import _4x3, _4x4                                           
+import _4x3, _4x4, _5x4, _6x5, _6x6                                           
 
 #COLORS
 GRAY     = (100, 100, 100)
@@ -116,6 +116,7 @@ def figuras_n2(screen):
 
 def figuras_n3(screen):
     
+    _5x4.main()
     
     
     font = pygame.font.SysFont("NotoSans-Regular.ttf",50)
@@ -125,37 +126,7 @@ def figuras_n3(screen):
     
 def figuras_n4(screen):
     
-    buttom(screen, 100, 550, 100, 50, YELLOW, RED,"menu")
-    buttom(screen, 390, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 520, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 650, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 780, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 390, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 520, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 650, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 780, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 390, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 520, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 650, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 780, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 390, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 520, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 650, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 780, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 910, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 910, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 910, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 910, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 1040, 70, 80, 100, GREEN, WHITE)
-    buttom(screen, 1040, 195, 80, 100, GREEN, WHITE)
-    buttom(screen, 1040, 320, 80, 100, GREEN, WHITE)
-    buttom(screen, 1040, 445, 80, 100, GREEN, WHITE)
-    buttom(screen, 1040, 570, 80, 100, GREEN, WHITE)
-    buttom(screen, 910, 570, 80, 100, GREEN, WHITE)
-    buttom(screen, 780, 570, 80, 100, GREEN, WHITE)
-    buttom(screen, 650, 570, 80, 100, GREEN, WHITE)
-    buttom(screen, 520, 570, 80, 100, GREEN, WHITE)
-    buttom(screen, 390, 570, 80, 100, GREEN, WHITE)
+    _6x5.main()
     
     font = pygame.font.SysFont("NotoSans-Regular.ttf",50)
     exit = font.render("Exit", True, (BLACK))
@@ -164,43 +135,7 @@ def figuras_n4(screen):
     
 def figuras_n5(screen):
     
-    buttom(screen, 100, 550, 100, 50, YELLOW, RED,"menu")
-    buttom(screen, 390, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 390, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 390, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 390, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 40, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 140, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 240, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 340, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 390, 440, 60, 90, GREEN, WHITE)
-    buttom(screen, 1040, 540, 60, 90, GREEN, WHITE)
-    buttom(screen, 910, 540, 60, 90, GREEN, WHITE)
-    buttom(screen, 780, 540, 60, 90, GREEN, WHITE)
-    buttom(screen, 650, 540, 60, 90, GREEN, WHITE)
-    buttom(screen, 520, 540, 60, 90, GREEN, WHITE)
-    buttom(screen, 390, 540, 60, 90, GREEN, WHITE)
+    _6x6.main()
     
     font = pygame.font.SysFont("NotoSans-Regular.ttf",50)
     exit = font.render("Exit", True, (BLACK))
